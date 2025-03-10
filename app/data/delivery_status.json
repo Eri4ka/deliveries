@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "transit",
+    "display_name": "В пути"
+  },
+  {
+    "id": 2,
+    "name": "delivered",
+    "display_name": "Доставлено"
+  },
+  {
+    "id": 3,
+    "name": "canceled",
+    "display_name": "Отменено"
+  }
+]
