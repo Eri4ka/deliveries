@@ -1,5 +1,5 @@
-import { endpoints } from "@/api/endpoints";
-import { request } from "@/api/request";
+import { endpoints } from "@/apis/endpoints";
+import { request } from "@/apis/request";
 import { NEXT_PUBLIC_API_URL } from "@/lib/constants";
 
 import {
