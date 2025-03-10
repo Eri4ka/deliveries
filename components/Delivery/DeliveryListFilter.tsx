@@ -53,3 +53,5 @@ export const DeliveryListFilter = memo(
     );
   }
 );
+
+DeliveryListFilter.displayName = 'DeliveryListFilter'
