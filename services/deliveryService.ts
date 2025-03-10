@@ -1,6 +1,6 @@
 import { endpoints } from "@/api/endpoints";
 import { request } from "@/api/request";
-import { NEXT_PUBLIC_API_URL } from "@/lib/constants";
+
 import {
   DeliveryDetailsType,
   DeliveryListResponseType,
@@ -17,7 +17,9 @@ type DeliveryListSearchParamsType = {
 export const getDeliveryList = async (
   params: DeliveryListSearchParamsType
 ): Promise<DeliveryListResponseType> => {
-  const requestUrl = new URL(`${NEXT_PUBLIC_API_URL}${endpoints.deliveryList}`);
+  console.log(process.env.NEXT_PUBLIC_API_URL)
+
+  const requestUrl = new URL(`${process.env.NEXT_PUBLIC_API_URL}${endpoints.deliveryList}`);
 
   Object.entries(params).forEach(([key, value]) => {
     if (value !== undefined) {
@@ -38,7 +40,7 @@ export const getDeliveryStatus = async (): Promise<
   DeliveryStatusResponseType[]
 > => {
   return request<DeliveryStatusResponseType[]>(
-    `${NEXT_PUBLIC_API_URL}${endpoints.deliveryStatus}`
+    `${process.env.NEXT_PUBLIC_API_URL}${endpoints.deliveryStatus}`
   );
 };
 
@@ -47,7 +49,7 @@ export const getDeliveryDetails = async (
   { expand_status }: { expand_status?: string } = {}
 ): Promise<DeliveryDetailsType> => {
   const requestUrl = new URL(
-    `${NEXT_PUBLIC_API_URL}${endpoints.deliveryDetails}${id}`
+    `${process.env.NEXT_PUBLIC_API_URL}${endpoints.deliveryDetails}${id}`
   );
 
   if (expand_status) {
